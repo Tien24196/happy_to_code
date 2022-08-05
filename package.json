@@ -1,0 +1,17 @@
+{
+  "name": "challenge-x",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index .js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^28.1.3"
+  }
+}
