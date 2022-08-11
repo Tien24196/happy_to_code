@@ -1,5 +1,7 @@
 const Employee = require("../lib/Employee");
 
+// Test for Employee class with getName, getId and getEmail functions
+
 test("Can instantiate Employee instance", () => {
   const e = new Employee();
   expect(typeof(e)).toBe("object");

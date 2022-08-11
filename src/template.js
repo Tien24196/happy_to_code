@@ -1,3 +1,5 @@
+// Generate HTML template
+
 const generateHTML = function (teamCard) {
     return `<!DOCTYPE html>
 <html lang="en">
@@ -28,7 +30,7 @@ const generateHTML = function (teamCard) {
 
 }
 
-// Generates cards for each employee class based
+// Generates cards for each class
 const generateCard = function (member) {
     //Fontawesome Icons change based on role
     let positionIcon;

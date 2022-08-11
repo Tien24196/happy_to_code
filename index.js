@@ -8,6 +8,7 @@ const makeHTML = require("./src/template");
 let teamMember = [];
 let teamCard='';
 
+// prompt questions for each employee
 function questions(){ 
     
     inquirer.prompt([
@@ -15,7 +16,7 @@ function questions(){
         type: "input",
         name: "name",
         message: "What is employee's name?",
-        validate: nameInput => {
+        validate: nameInput => {            // Validate the inputs
             if (nameInput) {
               return true;
             } else {
@@ -68,7 +69,7 @@ function questions(){
     {
         type: "input",
         name: "github",
-        message: "What is the engineer's github username?: ",
+        message: "What is the engineer's github username?: ", // prompt gitHub question for engineer
         validate: gitInput => {
             if (gitInput) {
               return true;
@@ -88,7 +89,7 @@ function questions(){
     {
         type: "input",
         name: "office",
-        message: "What is the manager's office number?: ",
+        message: "What is the manager's office number?: ", // prompt office number question for manager
         validate: officeInput => {
             if (officeInput) {
               return true;
@@ -108,7 +109,7 @@ function questions(){
     {
         type: "input",
         name: "school",
-        message: "What school is the intern attending: ",
+        message: "What school is the intern attending: ", // prompt school question for intern
         validate: idInput => {
             if (idInput) {
               return true;
@@ -125,7 +126,7 @@ function questions(){
             }
         }
     }
-])
+])     // push collected info into teamMember array
 .then( answers => {
     if (answers.role === "Intern") {
         let intern = new Intern (answers.name, answers.id, answers.email, answers.school);
@@ -145,7 +146,7 @@ function questions(){
     inquirer.prompt({
         type: "list",
         name: "finish",
-        message: "Do you want to add another employee?: ",
+        message: "Do you want to add another employee?: ", // ask if client wants to add more employee
         choices: [
             "Yes",
             "No"
@@ -160,7 +161,9 @@ function questions(){
 
             for (let i = 0; i < teamMember.length; i++) {
 
-                teamCard = teamCard + makeHTML.generateCard(teamMember[i]);
+              // generate HTML code for each employee in the array
+
+                teamCard = teamCard + makeHTML.generateCard(teamMember[i]);    
                
             }
 
@@ -168,11 +171,11 @@ function questions(){
                 if (err) throw err;})
 
 
-            console.log("-------------------------------------");
+            console.log("---------------------------------------------");
 
-            console.log("Your team profile is generated.");
-            
-            console.log("-------------------------------------");
+            console.log("Your team profile is successfully generated.");
+
+            console.log("---------------------------------------------");
         }
     })
     
